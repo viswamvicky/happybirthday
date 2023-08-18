@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    body {
+  margin: 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* min-height: 100vh; */
+  /* background: linear-gradient(135deg, #ff6b6b, #6b6bff, #6bff9e); */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background-color: #dce1e3;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+}
+
+.animation {
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(4, 4, 4);
+  animation: bounce 2s infinite;
+}
+
+.text {
+  display: block;
+  animation: fadeIn 2s;
+}
+
+.name {
+  display: block;
+  animation: slideIn 2s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background-color: #e7edee;
+}
+
+.birthdayCard {
+  position: relative;
+  width: 250px;
+  height:350px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: perspective(2500px);
+  transition: 1s;
+ 
+}
+
+.birthdayCard:hover {
+  transform: perspective(2500px) rotate(5deg);
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.2), 0 10px 100px rgba(0,0,0,0.5);
+}
+
+.birthdayCard:hover .cardFront {
+  transform: rotateY(-160deg); 
+}
+
+.birthdayCard:hover .happy {
+  visibility:hidden; 
+}
+
+.cardFront {
+  position: relative;
+  background-color: #93938b;
+  width: 250px;
+  height:350px;
+  overflow: hidden;
+  transform-origin: left;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,.2), 30px 0 50px rgba(0,0,0,0.4);
+  transition: .6s;
+}
+
+.happy {
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  margin:30px; 
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  transition: .1s;
+}
+
+.balloons {
+  position: absolute;
+}
+
+.balloonOne, .balloonTwo, .balloonThree, .balloonFour {
+  position: absolute;
+  width: 85px;
+  height:95px;
+  border-radius:50%;
+}
+
+.balloonOne {
+  background-color: rgba(46, 49, 230, 0.7);
+  left:-10px;
+  top:50px;
+}
+
+.balloonTwo {
+  background-color: rgb(6, 214, 160, 0.7);
+  left:50px;
+  top:20px;
+}
+
+.balloonThree {
+  background-color: rgba(250, 63, 45, 0.7);
+  left:110px;
+  top:50px;
+}
+
+.balloonFour {
+  background-color: rgb(17, 138, 178, 0.7);
+  left:170px;
+  top:20px;
+}
+
+.balloonOne:before, .balloonTwo:before, .balloonThree:before, .balloonFour:before {
+  content:"";
+  position: absolute;
+  width:1px;
+  height: 155px;
+  background-color: #ffd166;
+  top:95px;
+  left:43px;
+}
+
+.balloonOne:after, .balloonTwo:after, .balloonThree:after, .balloonFour:after {
+  content:"";
+  position: absolute;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  top:94px;
+  left:37px;
+}
+
+.balloonOne:after {
+  border-bottom: 10px solid #4926e1;
+}
+
+.balloonTwo:after {
+  border-bottom: 10px solid #06d6a0;
+}
+
+.balloonThree:after {
+  border-bottom: 10px solid #f6311b;
+}
+
+.balloonFour:after {
+  border-bottom: 10px solid #118ab2;
+}
+
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 250px;
+  height:350px;
+  z-index:-1;
+  left:0;
+  top:0;
+  box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+p {
+  /* font-family: 'Brush Script MT'; */
+  margin: 40px;
+  color: #333;
+}
+
+.name {
+  position: absolute;
+  left:150px;
+  top:200px;
+  color: #333;
+}
+
+.back {
+  font-family: Tahoma, sans-serif;
+  color: #333;
+  text-align: center;
+  margin:30px; 
+  outline-color:#333;
+  outline-style: dotted;
+}
+  </style>
+  <title>Happy Birthday, Madhu Sree!</title>
+</head>
+<body>
+  <div class="container">
+    <div class="animation">
+      <span class="text" id="animatedText">Happy Birthday</span>
+    </div>
+    <div class="birthdayCard" onclick="toggleCard()">
+      <div class="cardFront">
+        <h3 class="happy">HAPPY BIRTHDAY!</h3>
+        <div class="balloons">
+          <div class="balloonOne"></div>
+          <div class="balloonTwo"></div>
+          <div class="balloonThree"></div>
+          <div class="balloonFour"></div>
+        </div>
+      </div>
+      <div class="cardInside">
+        <h3 class="back">HAPPY BIRTHDAY! Madhu Sree</h3>
+        <p>Oye Madhu</p>
+        <p>Happy birthday!! I hope your day is filled with lots of love and laughter! May all of your birthday wishes come true.</p>
+        <p><a href="https://madhu-sree-portfolio.netlify.app/" style="text-decoration: none;">🎁 Collect your gift</a> </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function toggleCard() {
+      const card = document.querySelector('.birthdayCard');
+      card.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
